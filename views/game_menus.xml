@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="game_action" model="ir.actions.act_window">
+            <field name="name">Board Games</field>
+            <field name="res_model">game</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="game_config_action" model="ir.actions.act_window">
+            <field name="name">Game Config Action</field>
+            <field name="res_model">game</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="game_menu_root" name="Board Games">
+            <menuitem id="game_first_level_menu" name="Game First Level">
+                <menuitem id="game_menu_action" action="game_action"/>
+            </menuitem>
+            <menuitem id="game_config" name="Cofnig">
+                <menuitem id="game_menu_config_action" action="game_config_action"/>
+            </menuitem>
+        </menuitem>
+    </data>
+</odoo>
+

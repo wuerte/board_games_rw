@@ -9,7 +9,8 @@
     """,
 
     'data': [
-        # 'views/mymodule_view.xml',
+        'security/ir.model.access.csv',
+        'views/game_menus.xml',
     ],
     'installable': True,
     'application': True,
