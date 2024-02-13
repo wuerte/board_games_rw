@@ -1,3 +1,6 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
-access_game,access_game,model_game,base.group_user,1,0,0,0
-access_game_match,access_game_match,model_game_match,base.group_user,1,0,0,0
+access_game,access_game,model_game,base.group_user,1,1,1,1
+access_player,access_player,model_player,base.group_user,1,1,1,1
+access_game_match,access_game_match,model_game_match,base.group_user,1,1,1,1
+access_game_match_line,access_game_match_line,model_game_match_line,base.group_user,1,1,1,1
+access_game_match_line_component,access_game_match_line_component,model_game_match_line_component,base.group_user,1,1,1,1
