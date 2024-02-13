@@ -16,3 +16,4 @@
     'installable': True,
     'application': True,
 }
+#TODO add game.session model

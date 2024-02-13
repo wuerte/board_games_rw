@@ -12,6 +12,7 @@
                         <field name="note"/>
                         <field name="date"/>
                         <field name="game_id"/>
+                        <field name="winner_id"/>
                     </group>
                     <notebook>
                         <page string="Description">
