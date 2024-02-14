@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="player_view_form" model="ir.ui.view">
+        <field name="name">player.form</field>
+        <field name="model">player</field>
+        <field name="arch" type="xml">
+            <form string="Lost Reason">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="note"/>
+                        <field name="age"/>
+                    </group>
+                    <notebook>
+                        <page string="Game Matches">
+                            <group>
+                                <field name="game_match_line_ids" mode="tree" widget="one2many" readonly="1">
+                                    <tree editable="0">
+                                        <field name="game_match_id"/>
+                                        <field name="game_id"/>
+                                        <field name="score"/>
+                                        <field name="date"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+              </sheet>
+            </form>
+        </field>
+    </record>
+
+<!--    <record id="game_match_view_tree" model="ir.ui.view">-->
+<!--        <field name="name">game.match.tree</field>-->
+<!--        <field name="model">game.match</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree string="Board Game Match">-->
+<!--                <field name="name"/>-->
+<!--                <field name="date"/>-->
+<!--                <field name="winner_id"/>-->
+<!--                <field name="highest_score"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+
+
+</odoo>
