@@ -12,6 +12,7 @@ class GameMatch(models.Model):
     game_match_line_ids = fields.One2many(comodel_name="game.match.line", string="Game Match Line", inverse_name="game_match_id")
     # game_match_line_components_ids = fields.Many2many(comodel_name="game.match.line", string="Game Match Line")
     winner_id = fields.Many2one(comodel_name="player", string="Winner of the game match", compute='_compute_winner_id')
+    highest_score = fields.Integer(string="Highest Score")
 
 
     @api.depends("game_match_line_ids")
@@ -24,3 +25,15 @@ class GameMatch(models.Model):
         sorted_match_line_ids = self.game_match_line_ids.sorted(key=lambda line: line.score, reverse=True)
         self.winner_id = sorted_match_line_ids[0].player_id if sorted_match_line_ids else None
 
+
+    @api.onchange("winner_id")
+    def _onchange_winner_id(self):
+        """
+        Updates the highest score based on the selected winner.
+
+        :return: None if there no winner, otherwise winner_id score.
+        """
+        if self.winner_id:
+            self.highest_score = self.game_match_line_ids.filtered(lambda line: line.player_id == self.winner_id)[0].score
+        else:
+            self.highest_score = 0

@@ -19,6 +19,12 @@
             <field name="view_mode">tree,form</field>
         </record>
 
+        <record id="game_match_line_config_action" model="ir.actions.act_window">
+            <field name="name">Game Match Line</field>
+            <field name="res_model">game.match.line</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
         <menuitem id="game_menu_root" name="Board Games">
             <menuitem id="game_first_level_menu" name="Matches">
                 <menuitem id="game_menu_action" action="game_action"/>
@@ -26,6 +32,7 @@
             <menuitem id="game_config" name="Config">
                 <menuitem id="game_menu_config_action" action="game_config_action"/>
                 <menuitem id="player_menu_config_action" action="player_config_action"/>
+                <menuitem id="game_match_line_menu_config_action" action="game_match_line_config_action"/>
             </menuitem>
         </menuitem>
     </data>
