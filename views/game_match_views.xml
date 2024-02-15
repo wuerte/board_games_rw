@@ -5,20 +5,20 @@
         <field name="name">game.match.form</field>
         <field name="model">game.match</field>
         <field name="arch" type="xml">
-            <form string="Lost Reason">
+            <form string="Game Match">
                 <sheet>
                     <group>
                         <field name="name"/>
                         <field name="note"/>
                         <field name="date"/>
                         <field name="game_id"/>
-                        <field name="winner_id"/>
-                        <field name="highest_score"/>
+                        <field name="winner_id" readonly="1"/>
+                        <field name="highest_score" readonly="1"/>
                     </group>
                     <notebook>
-                        <page string="Description">
+                        <page string="Game Match Lines">
                         <group>
-                            <field name="game_match_line_ids" mode="tree" widget="one2many">
+                            <field name="game_match_line_ids" mode="tree" widget="one2many" string="Scores">
                                 <tree editable="1">
                                     <field name="player_id"/>
                                     <field name="score"/>

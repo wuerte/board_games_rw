@@ -14,6 +14,7 @@
         'views/game_match_views.xml',
         'views/game_match_line_views.xml',
         'views/player_views.xml',
+        'views/game_views.xml',
     ],
     'installable': True,
     'application': True,

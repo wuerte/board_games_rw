@@ -1,39 +1,37 @@
 <?xml version="1.0"?>
 <odoo>
 
-<!--    <record id="game_match_view_form" model="ir.ui.view">-->
-<!--        <field name="name">game.match.form</field>-->
-<!--        <field name="model">game.match</field>-->
-<!--        <field name="arch" type="xml">-->
-<!--            <form string="Lost Reason">-->
-<!--                <sheet>-->
-<!--                    <group>-->
-<!--                        <field name="name"/>-->
-<!--                        <field name="note"/>-->
-<!--                        <field name="date"/>-->
-<!--                        <field name="game_id"/>-->
-<!--                        <field name="winner_id"/>-->
-<!--                        <field name="highest_score"/>-->
-<!--                    </group>-->
-<!--                    <notebook>-->
-<!--                        <page string="Description">-->
-<!--                        <group>-->
-<!--                            <field name="game_match_line_ids" mode="tree" widget="one2many">-->
-<!--                                <tree editable="1">-->
-<!--                                    <field name="player_id"/>-->
-<!--                                    <field name="score"/>-->
-<!--                                </tree>-->
-<!--                            </field>-->
-<!--                        </group>-->
-<!--                        </page>-->
-<!--                    </notebook>-->
-<!--              </sheet>-->
-<!--            </form>-->
-<!--        </field>-->
-<!--    </record>-->
+    <record id="game_match_line_view_form" model="ir.ui.view">
+        <field name="name">game.match.line.form</field>
+        <field name="model">game.match.line</field>
+        <field name="arch" type="xml">
+            <form string="Game Match Line">
+                <sheet>
+                    <group>
+                        <field name="game_id"/>
+                        <field name="game_match_id"/>
+                        <field name="player_id"/>
+                        <field name="score"/>
+                        <field name="date"/>
+                    </group>
+                    <notebook>
+                        <page string="Game Match Line Component">
+                        <group>
+                            <field name="game_match_line_component_ids" mode="tree" widget="one2many" readonly="1" string="Components">
+                                <tree editable="1">
+                                    <field name="player_id"/>
+                                </tree>
+                            </field>
+                        </group>
+                        </page>
+                    </notebook>
+              </sheet>
+            </form>
+        </field>
+    </record>
 
     <record id="game_match_line_view_tree" model="ir.ui.view">
-        <field name="name">game.match.tree</field>
+        <field name="name">game.match.line.tree</field>
         <field name="model">game.match.line</field>
         <field name="arch" type="xml">
             <tree string="Board Game Match">
