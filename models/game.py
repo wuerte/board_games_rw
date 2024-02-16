@@ -16,4 +16,5 @@ class Game(models.Model):
     @api.depends("game_match_line_ids")
     def _compute_avg_score(self):
         scores = self.game_match_line_ids.mapped('score')
-        self.avg_score = sum(scores) / len(scores)
+        if scores:
+            self.avg_score = sum(scores) / len(scores)
