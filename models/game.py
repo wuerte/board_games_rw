@@ -18,3 +18,5 @@ class Game(models.Model):
         scores = self.game_match_line_ids.mapped('score')
         if scores:
             self.avg_score = sum(scores) / len(scores)
+        else:
+            self.avg_score = 0.0
