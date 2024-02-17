@@ -13,6 +13,7 @@ class GameMatch(models.Model):
     # game_match_line_components_ids = fields.Many2many(comodel_name="game.match.line", string="Game Match Line")
     winner_id = fields.Many2one(comodel_name="player", string="Winner of the game match", compute='_compute_winner_id')
     highest_score = fields.Integer(string="Highest Score")
+    avg_score = fields.Float(string="Average Score", compute='_compute_avg_score')
 
 
     @api.depends("game_match_line_ids")
@@ -26,7 +27,7 @@ class GameMatch(models.Model):
         self.winner_id = sorted_match_line_ids[0].player_id if sorted_match_line_ids else None
 
 
-    @api.onchange("winner_id")
+    @api.onchange("avg_score")
     def _onchange_winner_id(self):
         """
         Updates the highest score based on the selected winner.
@@ -37,3 +38,13 @@ class GameMatch(models.Model):
             self.highest_score = self.game_match_line_ids.filtered(lambda line: line.player_id == self.winner_id)[0].score
         else:
             self.highest_score = 0
+
+
+    @api.depends("game_match_line_ids")
+    def _compute_avg_score(self):
+        if game.game_match_line_ids:
+            scores = self.game_match_line_ids.mapped('score')
+            self.avg_score = sum(scores) / len(scores)
+        else:
+            self.avg_score = 0
+
