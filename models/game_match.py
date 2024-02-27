@@ -10,7 +10,7 @@ class GameMatch(models.Model):
     date = fields.Datetime(string="Date", help="Date of the game match", default=datetime.now())
     game_id = fields.Many2one(comodel_name="game", string="Game")
     game_match_line_ids = fields.One2many(comodel_name="game.match.line", string="Game Match Line", inverse_name="game_match_id")
-    # game_match_line_components_ids = fields.Many2many(comodel_name="game.match.line", string="Game Match Line")
+    game_match_line_component_ids = fields.One2many(comodel_name="game.match.line.component", string="Game Match Line", inverse_name="game_match_id")
     winner_id = fields.Many2one(comodel_name="player", string="Winner of the game match", compute='_compute_winner_id', store=True)
     highest_score = fields.Integer(string="Highest Score", compute='_compute_highest_score')
     avg_score = fields.Float(string="Average Score", compute='_compute_avg_score', store=True)

@@ -8,3 +8,4 @@ class GameMatchLineComponent(models.Model):
     game_match_line_id = fields.Many2one(comodel_name="game.match.line", string="Game Match Line")
     player_id = fields.Many2one(comodel_name="player", string="player")
     value = fields.Integer(string="Value")
+    name = fields.Char(string="Component", help="Name of the game match")

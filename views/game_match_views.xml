@@ -27,6 +27,17 @@
                             </field>
                         </group>
                         </page>
+                        <page string="Game Match Lines Components">
+                        <group>
+                            <field name="game_match_line_component_ids" mode="tree" widget="one2many" string="Scores">
+                                <tree editable="1">
+                                    <field name="name"/>
+                                    <field name="player_id"/>
+                                    <field name="value"/>
+                                </tree>
+                            </field>
+                        </group>
+                        </page>
                     </notebook>
               </sheet>
             </form>
