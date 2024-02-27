@@ -14,6 +14,7 @@
                         <field name="game_id"/>
                         <field name="winner_id" readonly="1"/>
                         <field name="highest_score" readonly="1"/>
+                        <field name="avg_score" readonly="1"/>
                     </group>
                     <notebook>
                         <page string="Game Match Lines">
