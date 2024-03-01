@@ -39,7 +39,7 @@
                         </page>
                         <page string="Game Score Components">
                             <group>
-                                <field name="game_match_line_ids" mode="tree" widget="one2many" readonly="1">
+                                <field name="game_score_component_ids" mode="tree" widget="one2many" readonly="1">
                                     <tree editable="0">
                                         <field name="name"/>
                                     </tree>
