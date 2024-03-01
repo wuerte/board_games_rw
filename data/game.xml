@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="game_7_wonders" model="game">
+            <field name="name">7 cudów świata</field>
+        </record>
+        <record id="game_scythe" model="game">
+            <field name="name">Scythe</field>
+        </record>
+        <record id="game_terraforming_mars" model="game">
+            <field name="name">Terraformacja Marsa</field>
+        </record>
+        <record id="game_citadel" model="game">
+            <field name="name">Cytadela</field>
+        </record>
+        <record id="game_game_of_thrones" model="game">
+            <field name="name">Gra o Tron: gra planszowa</field>
+        </record>
+    </data>
+</odoo>
