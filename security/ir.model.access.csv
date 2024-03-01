@@ -4,3 +4,4 @@ access_player,access_player,model_player,base.group_user,1,1,1,1
 access_game_match,access_game_match,model_game_match,base.group_user,1,1,1,1
 access_game_match_line,access_game_match_line,model_game_match_line,base.group_user,1,1,1,1
 access_game_match_line_component,access_game_match_line_component,model_game_match_line_component,base.group_user,1,1,1,1
+access_game_score_component,access_game_score_component,model_game_score_component,base.group_user,1,1,1,1
