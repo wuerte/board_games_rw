@@ -37,6 +37,15 @@
                                 </field>
                             </group>
                         </page>
+                        <page string="Game Score Components">
+                            <group>
+                                <field name="game_match_line_ids" mode="tree" widget="one2many" readonly="1">
+                                    <tree editable="0">
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
                     </notebook>
               </sheet>
             </form>

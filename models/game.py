@@ -9,6 +9,7 @@ class Game(models.Model):
     game_match_ids = fields.One2many('game.match', string="Game Matches", inverse_name="game_id")
     game_match_line_ids = fields.One2many('game.match.line', string="Game Matche Line", inverse_name="game_id", related="game_match_ids.game_match_line_ids")
     avg_score = fields.Float(string='Average Score', compute='_compute_avg_score', store=True)
+    game_score_component_ids = fields.One2many('game.score.component', string="Game Matche Line", inverse_name="game_id")
 
     #TODO add form view with readolny game_match_ids!!
     #TODO add game_match_line_ids and also to Form View.
