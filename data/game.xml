@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+<!--    <data noupdate="1">-->
     <data>
         <record id="game_7_wonders" model="game">
             <field name="name">7 cudów świata</field>
+<!--            <field name="category_ids" eval="[Command.set([ref('employee_category_4'), ref('employee_category_2')])]"/>-->
         </record>
         <record id="game_scythe" model="game">
             <field name="name">Scythe</field>
